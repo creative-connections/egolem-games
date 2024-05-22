@@ -1,0 +1,24 @@
+{
+  "name": "egolem games",
+  "displayName": "eGolem games",
+  "version": "1.0.0",
+  "description": "Games powered by maths and simulators.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Creative Connections",
+  "license": "private",
+  "devDependencies": {
+    "cordova-browser": "^7.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "browser",
+      "android"
+    ]
+  }
+}

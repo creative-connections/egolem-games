@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="cz.egolem_games" version="1.0.11" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>eGolem Games</name>
+    <description>Games powered by maths and simulators</description>
+    <author email="info@creativeconnections.cz" href="https://creativeconnections.cz">
+        Creative Connections s.r.o.
+    </author>
+    <icon src="www/img/egolem.png" />
+    <content src="index.html" />
+    <allow-navigation href="https://html5test.com" />
+    <allow-navigation href="https://webglreport.com" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />    
+</widget>

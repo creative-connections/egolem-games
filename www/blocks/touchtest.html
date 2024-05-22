@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Touch and Click Events</title>
+    <style>
+        /* Ensure the div covers the whole screen */
+        #touchArea {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: lightgrey; /* So we can see the touch area */
+        }
+    </style>
+</head>
+<body>
+    <div id="touchArea"></div>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const touchArea = document.getElementById('touchArea');
+
+    touchArea.addEventListener('click', function(event) {
+        handleEvent(event);
+    });
+
+    touchArea.addEventListener('touchend', function(event) {
+        event.preventDefault(); // Prevents the click event
+        handleEvent(event.changedTouches[0]);
+    });
+
+    function handleEvent(event) {
+        const touchAreaBounds = touchArea.getBoundingClientRect();
+        const touchX = event.clientX;
+        const touchY = event.clientY;
+
+        // Calculate the boundaries for the upper and bottom fourths
+        const upperFourthBoundary = touchAreaBounds.height / 4;
+        const bottomFourthBoundary = 3 * touchAreaBounds.height / 4;
+        const horizontalMiddle = touchAreaBounds.width / 2;
+
+        // Determine the area of the event
+        if (touchY < upperFourthBoundary) {
+            up();
+        } else if (touchY >= bottomFourthBoundary) {
+            bottom();
+        } else if (touchX < horizontalMiddle) {
+            left();
+        } else {
+            right();
+        }
+    }
+
+    function left() {
+        console.log('Left middle part clicked/touched');
+    }
+
+    function right() {
+        console.log('Right middle part clicked/touched');
+    }
+
+    function bottom() {
+        console.log('Bottom fourth clicked/touched');
+    }
+
+    function up() {
+        console.log('Upper fourth clicked/touched');
+    }
+});
+
+    </script>
+</body>
+</html>
